@@ -137,8 +137,8 @@ def main_test_process
 	test_case_root_path = "/home/repo/git/benchmark/benchmark-configs/qa2/configs/#{test_case_category}"
 
 	# build grinder
-	print ">> Build Grinder before running test...\n"
-	run_command("ant clean jar", "#{benchmark_path}/grinder", PrintHandler.new)
+	#print ">> Build Grinder before running test...\n"
+	#run_command("ant clean jar", "#{benchmark_path}/grinder", PrintHandler.new)
 
 	# run tests: testcase level
 	test_cases.each do |test_case|

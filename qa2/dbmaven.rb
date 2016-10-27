@@ -6,7 +6,7 @@ class TestCase
 	def initialize(benchmark_path, test_case_path)
 		@benchmark_path = benchmark_path
 		@test_case_path = test_case_path
-		@command = "ant maintain-systems all-portal start-visualvm all-grinder all-sample stop"
+		@command = "ant all-database"
 	end
 
 	def run_case
@@ -41,10 +41,6 @@ class Login < TestCase
 end
 
 class MessageBoard < TestCase
-	def run_case
-		copy_files
-		run_command("ant maintain-systems reload-warmup-database all-portal start-visualvm all-grinder all-sample stop", @benchmark_path)
-	end
 end
 
 class WebContent < Login
@@ -137,8 +133,8 @@ def main_test_process
 	test_case_root_path = "/home/repo/git/benchmark/benchmark-configs/qa2/configs/#{test_case_category}"
 
 	# build grinder
-	print ">> Build Grinder before running test...\n"
-	run_command("ant clean jar", "#{benchmark_path}/grinder", PrintHandler.new)
+	#print ">> Build Grinder before running test...\n"
+	#run_command("ant clean jar", "#{benchmark_path}/grinder", PrintHandler.new)
 
 	# run tests: testcase level
 	test_cases.each do |test_case|
