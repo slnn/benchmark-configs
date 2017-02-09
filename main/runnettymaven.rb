@@ -6,7 +6,7 @@ class TestCase
 	def initialize(benchmark_path, test_case_path)
 		@benchmark_path = benchmark_path
 		@test_case_path = test_case_path
-		@command = "ant all-portal start-visualvm all-grinder all-sample stop"
+		@command = "ant maintain-systems all-portal start-visualvm all-grinder all-sample stop"
 	end
 
 	def run_case
@@ -43,7 +43,7 @@ end
 class MessageBoard < TestCase
 	def run_case
 		copy_files
-		run_command("ant reload-warmup-database all-portal start-visualvm all-grinder all-sample stop", @benchmark_path)
+		run_command("ant maintain-systems reload-warmup-database all-portal start-visualvm all-grinder all-sample stop", @benchmark_path)
 	end
 end
 
